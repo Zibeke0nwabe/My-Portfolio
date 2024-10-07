@@ -1,0 +1,52 @@
+[debug] [2024-10-07T15:15:47.196Z] ----------------------------------------------------------------------
+[debug] [2024-10-07T15:15:47.420Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Liyema\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-10-07T15:15:47.422Z] CLI Version:   13.20.2
+[debug] [2024-10-07T15:15:47.424Z] Platform:      win32
+[debug] [2024-10-07T15:15:47.425Z] Node Version:  v20.15.1
+[debug] [2024-10-07T15:15:47.426Z] Time:          Mon Oct 07 2024 17:15:47 GMT+0200 (South Africa Standard Time)
+[debug] [2024-10-07T15:15:47.427Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-07T15:15:47.680Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-07T15:15:47.681Z] > authorizing via signed-in user (zibekeonwabe@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Liyema\Desktop\React Le\project2\onwabe-portfolio\src
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-10-07T15:16:24.866Z] Checked if tokens are valid: false, expires at: 1728263652512
+[debug] [2024-10-07T15:16:24.867Z] Checked if tokens are valid: false, expires at: 1728263652512
+[debug] [2024-10-07T15:16:24.868Z] > refreshing access token with scopes: []
+[debug] [2024-10-07T15:16:24.879Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-10-07T15:16:24.879Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-10-07T15:16:25.377Z] *** [apiv2] error from fetch(https://www.googleapis.com/oauth2/v3/token, {"headers":{},"method":"POST","body":{"_overheadLength":545,"_valueLength":212,"_valuesToMeasure":[],"writable":false,"readable":true,"dataSize":0,"maxDataSize":2097152,"pauseStreams":true,"_released":true,"_streams":[],"_currentStream":null,"_insideLoop":false,"_pendingNext":false,"_boundary":"--------------------------849021405567881771371593","_events":{},"_eventsCount":1}}): FetchError: request to https://www.googleapis.com/oauth2/v3/token failed, reason: getaddrinfo ENOTFOUND www.googleapis.com
+[debug] [2024-10-07T15:16:25.378Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2024-10-07T15:16:25.423Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at invalidCredentialError (C:\Users\Liyema\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:140:12)
+    at refreshTokens (C:\Users\Liyema\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:526:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async getAccessToken (C:\Users\Liyema\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:42:18)
+    at async Client.addAuthHeader (C:\Users\Liyema\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:169:21)
+    at async Client.request (C:\Users\Liyema\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:120:34)
+    at async getProjectPage (C:\Users\Liyema\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:238:17)
+    at async getFirebaseProjectPage (C:\Users\Liyema\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:255:23)
+    at async selectProjectInteractively (C:\Users\Liyema\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:94:41)
+    at async doSetup (C:\Users\Liyema\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\features\project.js:88:27)
+[error] 
+[error] Error: Failed to list Firebase projects. See firebase-debug.log for more info.
