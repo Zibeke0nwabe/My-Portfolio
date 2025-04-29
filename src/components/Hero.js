@@ -20,13 +20,13 @@ const Hero = () => {
         <div className="mt-8 space-x-4">
           <a
             href='/images/Onwabe.pdf'
-            download 
+            download
             className="bg-orange-500 text-white px-6 py-3 font-semibold rounded-full shadow-md hover:bg-orange-600"
           >
             Download CV
           </a>
           <a
-            href="https://wa.me/+27784300901" 
+            href="https://wa.me/+27784300901"
             className="bg-gray-900 text-white px-6 py-3 font-semibold rounded-full shadow-md hover:bg-gray-800"
           >
             Contact Me
