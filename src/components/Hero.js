@@ -3,7 +3,7 @@ import { ReactTyped as Typed } from 'react-typed';
 
 const Hero = () => {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-between py-20 px-4 md:px-20 relative overflow-hidden">
+    <section className="flex flex-col md:flex-row items-center justify-between p-14 relative overflow-hidden">
       <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           <span className="text-orange-500">Hello, I'm</span> <br />
@@ -21,20 +21,21 @@ const Hero = () => {
           <a
             href='/images/Onwabe.pdf'
             download
-            className="bg-orange-500 text-white px-6 py-3 font-semibold rounded-full shadow-md hover:bg-orange-600"
+            className="bg-orange-500 text-white px-6 py-3 font-semibold rounded-full shadow-md
+             hover:bg-gray-900"
           >
             Download CV
           </a>
           <a
             href="https://wa.me/+27784300901"
-            className="bg-gray-900 text-white px-6 py-3 font-semibold rounded-full shadow-md hover:bg-gray-800"
+            className="bg-gray-900 text-white px-6 py-3 font-semibold rounded-full shadow-md hover:bg-orange-500"
           >
             Contact Me
           </a>
         </div>
       </div>
-      <div className="md:w-1/2 relative">
-        <div className="absolute inset-0 bg-orange-500 rounded-full transform translate-x-8 translate-y-8 md:translate-x-12 md:translate-y-12 z-0" style={{ width: '150%', height: '150%' }}></div>
+      <div className="md:w-1/2 relative pr-6 pb-8">
+        <div className="absolute inset-0 bg-orange-500 rounded-full transform translate-x-8 translate-y-8 md:translate-x-12 md:translate-y-12 z-0" style={{ width: '100%', height: '100%' }}></div>
         <img
           src="/onwabe.jpg"
           alt="Zibeke Onwabe"

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -11,171 +12,131 @@ import ProjectDetails from './components/ProjectDetails';
 
 
 const projects = [
-  {
-    "id": "1",
-    "title": "Student Application Management System",
-    "description": "An online application system for student submissions and secure login.",
-    "detailedDescription": "This platform allows users to submit forms, receive a unique student number, and log in securely. It includes dynamic content rendering with EJS and is built using Node.js, Express, MongoDB, and TailwindCSS. Additionally, the system features an admin section where authorized administrators can log in securely to access and manage all student data. This includes viewing student usernames, tracking submission details, and reviewing uploaded files such as ID copies and certificates.",
-    "image": "images/apply1.png",
-    "tools": ["Node.js", "Express", "MongoDB", "EJS", "TailwindCSS"],
-    "website": "https://www.esgela.onrender.com/",
-    "github": "https://github.com/Zibeke0nwabe/Full-stack-websites",
-    "experience": "This project marked my first full-stack website development. It provided me with hands-on experience in connecting frontend and backend technologies, utilizing EJS to dynamically render content, and applying my foundational skills in HTML, CSS, JavaScript, and Tailwind CSS.",
-    "challenges": "Connecting the backend with the frontend was initially challenging. I overcame this by learning and implementing EJS for dynamic content rendering, which was a significant learning step that eventually led me to explore React for more advanced frontend development.",
-    "motivationForReact": "React’s component-based architecture, declarative syntax, efficient updates, and rich ecosystem motivated me to learn it. I wanted a more powerful and flexible solution for building interactive UIs, which I successfully applied in my next project, Esgela.",
-    "codeSnippet": "const express = require(\"express\");\nconst app = express();\napp.set(\"view engine\", \"ejs\");\napp.get(\"/\", (req, res) => {\n  res.render(\"index\");\n});\napp.listen(3000);\n",
-    "codeImage": "images/apply2.png"
-},  
-  
-  {
-    id: '2',
-    title: 'Esgela',
-    description: 'An interactive web development learning platform in progress.',
-    detailedDescription: 'Esgela is a platform designed to teach and assess web development skills. It features course selection, interactive coding environments, testing, and certification. The project includes secure user authentication and is built using React, Node.js, Express, MongoDB, and TailwindCSS.',
-    image: 'images/esgela3.png',
-    tools: ['ReactJS', 'Node.js', 'Express', 'MongoDB','AceEditor', 'TailwindCSS','NodeMailer'],
-    website: 'https://github.com/Zibeke0nwabe/Full-stack-websites/tree/main/FULL%20STACK%20ESGELA',
-    github: 'https://github.com/Zibeke0nwabe/Full-stack-websites/tree/main/FULL%20STACK%20ESGELA',
-    experience: 'Developing Esgela has been a significant learning journey for me. Working on this project has allowed me to turn an abstract idea into a functional reality. Through this process, I’ve gained valuable experience in React and other technologies, which has greatly enhanced my development skills. The project has also taught me the importance of thorough research and the iterative process of software development.',
-    challenges: 'One of the key challenges was integrating AceEditor into the application. It required in-depth research to understand its features and how to effectively implement it within my project. I had to explore various resources and documentation to get a grasp on integrating this tool, which involved a steep learning curve but ultimately contributed to my growth as a developer.',
-    codeSnippet: 'import React from \'react\';\nimport AceEditor from "react-ace";\nimport "ace-builds/src-noconflict/mode-javascript";\nimport "ace-builds/src-noconflict/theme-monokai";\n\nconst CodeEditor = ({ value, onChange }) => {\n  return (\n    <AceEditor\n      mode="javascript"\n      theme="monokai"\n      name="code_editor"\n      value={value}\n      onChange={onChange}\n      editorProps={{ $blockScrolling: true }}\n      setOptions={{ useWorker: false }}\n      width="100%"\n      height="400px"\n    />\n  );\n};\n\nexport default CodeEditor;',
-    codeImage: 'images/esgela2.png',
-  },
-  {
-    id: '1',
-    title: 'Shankura',
-    description: 'An online platform where users can play number guessing games, watch ads, or complete quizzes to earn money.',
-    detailedDescription: 'Shankura offers an engaging way for users to earn money by playing a number guessing game where a random set of five numbers is generated. Users can win money based on the number of matches, starting from three to five correct numbers. Additionally, users earn R5 upon account creation and R3 for each referral. The platform implements JWT for secure user authentication, including password hashing and verification codes for new accounts and password recovery. Routes are protected, ensuring users must log in to access features, and we are currently awaiting a response from AdSense regarding ad implementation.',
-    image: 'images/Shankura.png',
-    tools: ['EmbeddedJS', 'Node.js', 'Express', 'MongoDB', 'JWT','MongoDB','NodeMailer','TailwindCSS'],
-    website: 'https://shankura.onrender.com/',
-    github: 'https://github.com/Zibeke0nwabe/shankura-full-stack',
-    experience: 'Building Shankura has been an enriching experience, allowing me to apply my skills in a real-world context. I learned a lot about user authentication, database management, and integrating ad revenue systems. This project has helped me understand the intricacies of web application development and the importance of user engagement in monetization strategies.',
-    challenges: 'A significant challenge was implementing the ad system. After sending a request to AdSense, we are still waiting for approval. Additionally, ensuring the security of user data through JWT and managing the referral system required careful planning and execution. Overcoming these challenges has enhanced my problem-solving skills and deepened my understanding of web development best practices.',
-    codeSnippet: 'const mongoose = require(\'mongoose\');\n\nconst userSchema = new mongoose.Schema({\n  username: { type: String, required: true, unique: true },\n  email: { type: String, required: true, unique: true },\n  password: { type: String, required: true },\n  balance: { type: Number, default: 5 },\n  pendingBalance: { type: Number, default: 0 }, // New field for pending balance\n  referralCode: { type: String, unique: true }, // Unique referral code\n  referrals: { type: Number, default: 0 }, // Count of referrals\n  verificationCode: { type: String },\n  codeExpires: { type: Date },\n  isVerified: { type: Boolean, default: false },\n});\n\nmodule.exports = mongoose.model(\'User\', userSchema);',
-    codeImage: 'images/Shankura_code.png',
-  },  
-  {
-    "id": "4",
-    "title": "PSJ Tour Guider",
-    "description": "A website created for a client to showcase tours in Port St. Johns.",
-    "detailedDescription": "The PSJ Tour Guider website features an engaging hero section, detailed service descriptions, an interactive gallery, a portfolio section showcasing previous tours, a FAQ section, and a contact form. It was built using React and styled with TailwindCSS. The site also includes a feature for receiving emails via Nodemailer.",
-    "image": "images/mrGu.png",
-    "tools": ["ReactJS", "TailwindCSS", "Nodemailer"],
-    "website": "https://gugu-ba8e9.web.app",  
-    "github": "https://github.com/Zibeke0nwabe/Full-stack-websites/tree/main/gugu-tour-guide",  
-    "experience": "Working on the PSJ Tour Guider website taught me not only about coding but also how to work closely with a client. Converting a client's idea into an impressive website with limited instructions was a valuable experience. I learned how to manage client expectations and deliver a product that exceeded their vision. Additionally, integrating Nodemailer for email functionality was a new skill I acquired during this project.",
-    "challenges": "One of the main challenges was working with limited instructions from the client. It required creative problem-solving to produce an impressive final product. Another challenge was integrating Nodemailer to handle email functionalities, which was a new experience for me. Despite these challenges, the project was rewarding and contributed significantly to my growth as a developer.",
-    "codeSnippet":`
-              import React from 'react';
-              import { FaWhatsapp, FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
-              import Navbar from './Navbar';
-
-              const HeroSection = () => {
-                return (
-                  <div
-                    className="relative bg-cover bg-center h-screen"
-                    style={{ backgroundImage: "url('/image24.jpg')" }}
-                  >
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-75"></div>
-                    {/* Navbar Component */}
-                    <Navbar />
-                    {/* Hero Content */}
-`,  
-    "codeImage": "images/mrGu2.png"  
-  },
-
-  {
-    id: '5',
-    title: 'Football Fixture Generator App',
-    description: 'A web application for managing sports tournaments and leagues.',
-    detailedDescription: 'This application is designed for creating and managing sports tournaments and leagues. It features data persistence using LocalStorage and includes functionalities for scheduling games. The frontend is built using HTML, CSS, and JavaScript.',
-    image: 'images/ball.png',
-    tools: ['HTML', 'CSS', 'JavaScript', 'LocalStorage'],
-    website: 'https://fixtureapp-e3601.web.app/',
-    challenges: 'What was challenging about this website was implementing the team pair function and align every game with time',
-    github: 'https://github.com/Zibeke0nwabe/HTML-CSS-JavaScript/tree/master/Football%20Fixture%20Maker',
-    experience: 'This project was a significant learning experience where I applied my knowledge of JavaScript, HTML, and CSS to build a web application. It helped me understand how to connect frontend elements with JavaScript to create a dynamic user interface.',
-    learningResources: 'I would like to thank Supersimpledev for their practical lessons and exercises, which were extremely helpful in my learning process. Additionally, Codecademy’s free version and Supersimpledev’s YouTube channel provided valuable insights and practical knowledge.',
-    codeSnippet: `
-          function createTournament() {
-          var tournamentName = prompt("Enter the name of the tournament:");
-          var numberOfTeams = prompt("Enter the number of teams:");
-          var teamNames = [];
-          for (var i = 0; i < numberOfTeams; i++) {
-              var teamName = prompt("Enter team " + (i + 1) + " name:");
-              teamNames.push(teamName);
-          }
-
-          var pairings = generatePairings(teamNames);
-          sessionStorage.setItem('tournamentName', tournamentName);
-          sessionStorage.setItem('pairings', JSON.stringify(pairings));
-          window.location.href = 'pairings.html';
-      }
-
-      function generatePairings(teams) {
-          var pairings = [];
-          for (var i = 0; i < teams.length; i += 2) {
-              if (i + 1 < teams.length) {
-                  pairings.push(teams[i] + " vs " + teams[i + 1]);
-              } else {
-                  pairings.push(teams[i] + " has no opponent.");
-              }
-          }
-          return pairings;
-      }
-    `,
-    codeImage: 'images/ball2.png',
-  },
-  {
-    "id": "6",
-    "title": "Image Protector",
-    "description": "A tool for securely storing and downloading images.",
-    "detailedDescription": "Image Protector is a web application that allows users to upload, securely store, and download images. The app leverages LocalStorage for data management, ensuring that images are stored on the user's device with ease of access and retrieval. Built with HTML, CSS, and JavaScript, the application features a user-friendly interface that makes managing images simple and efficient.",
-    "image": "images/save.png",
-    "tools": ["HTML", "CSS", "JavaScript"],
-    "website": "https://arpanet-45562.web.app/",
-    "github": "https://github.com/Zibeke0nwabe/HTML-CSS-JavaScript/tree/master/Football%20Fixture%20Maker",
-    "experience": "This project enhanced my understanding of LocalStorage and how it can be used to manage data in web applications. I also learned how to create a secure environment for file management using HTML, CSS, and JavaScript.",
-    "challenges": "One of the key challenges was ensuring the secure storage of images and providing a seamless download experience for users.",
-    "learningResources": "Supersimpledev’s tutorials and Codecademy's resources were instrumental in helping me understand the nuances of web development and secure data storage.",
-    "codeSnippet": `
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Home</title>
-          <link rel="stylesheet" href="styles.css">
-          <link rel="stylesheet" href="homestyle.css">
-      </head>
-      <body>
-      <div class="container">
-          <main>
-              <div class="para">
-                  <h1>It's not just Images, <span>It's memories</span> <br/>that are worth to be saved and protected.</h1>
-              </div>
-              <p>Create an account and save your memories</p>
-            <a href="login.html"><button class="home-btn">Get Started</button></a>
-          </main>
-          <div class="content1">
-              <h1>About Images</h1>
-          </div>
-      </div>
-      </body>
-      </html>
-    `,
-    "codeImage": "images/save.png"
-  }
-  
-
+{
+  "id": "1",
+  "title": "Agent Trainer — AI-Powered Customer Simulation",
+  "description": "A deeply personal AI-powered training tool for call center agents, designed to simulate real-life voice and chat scenarios using Gemini API.",
+  "detailedDescription": "Agent Trainer is a full-stack web application designed to help call center agents practice real-life customer service scenarios in a risk-free environment. Built during a difficult time when I was struggling with low confidence and communication challenges due to my English accent, the platform became both a personal lifeline and a practical solution. It simulates customer interactions using AI, allowing agents to improve their listening, speaking, and problem-solving skills under realistic conditions.",
+  "image": "images/agenttrainer.png",
+  "images": [
+    "images/agenttrainer.png",
+    "images/agenttrainerLogin (1).png",
+    "images/agenttrainerCall.png",
+    "images/agenttrainerChat.png"
+  ],
+  "video": "videos/agenttrainer.mp4",
+  "tools": [
+    "HTML", "CSS", "JavaScript", "Embedded JS", "Gemini API (LLM)", 
+    "Web Speech API (voice)", "Node.js", "Express", "MongoDB", "TailwindCSS"
+  ],
+  "website": "https://www.agenttrainer.onrender.com/",
+  "github": "https://github.com/Zibeke0nwabe/agentTrainer",
+  "experience": "I began developing Agent Trainer in December, during my early days working as a call center agent. I was often criticized for my strong accent and struggled with confidence. This project gave me hope—it helped me understand how to turn real-world struggles into functional, meaningful solutions. It taught me the value of research, empathy, and iterative development under real pressure.",
+  "challenges": "Built mostly at night after 10–12 hour shifts with limited resources and free-tier tools, Agent Trainer was my attempt to improve the industry from the inside. I pitched the project to management, hoping to move into a development role. While early feedback was positive, I never received a final response and still don’t know why. This setback was tough to process, but it also reinforced the reality that even the best ideas sometimes go unrecognized. Despite that, I’m proud of what I created.",
+  "motivationForReact": "Agent Trainer was born from the emotional weight of being shouted at and belittled by customers while trying my best in a high-pressure environment. The fear of underperforming was real, and I needed a way to protect my mental health while still striving to improve. The system was designed to fill the gap between theoretical training and real-world application—giving agents the chance to practice calls with dynamic, AI-driven responses that react based on tone, timing, and language. It emphasizes listening skills, empathy, and confidence—everything I wish I had when I started."
+}
+,
+{
+  "id": "2",
+  "title": "Ekhaya Smart Scholars — Online Application System",
+  "description": "A full-stack educational application platform designed to help learners submit applications securely, with email confirmations and admin review tools.",
+  "detailedDescription": "Ekhaya Smart Scholars is a full-stack web application built to support students in applying to educational programs online. Developed as an improved version of Esgela, it was created in collaboration with a fellow call center agent who was inspired by my earlier projects. While the design was requested to remain similar to Esgela, the system expands with new features like subscription handling, contact forms, and admin controls. It allows for a complete application process, from user submission to acceptance or rejection with automated email notifications.",
+  "image": "images/essHeor.png",
+  "images": [
+    "images/essHeor.png",
+    "images/essLogin.png",
+    "images/essAbout.png",
+    "images/essTeam.png",
+    "images/essFooter.png"
+  ],
+  "video": "videos/ess.mp4",
+  "tools": [
+    "HTML", "CSS", "JavaScript", "Embedded JS",
+    "Node.js", "Express", "MongoDB",
+    "TailwindCSS", "JWT", "NodeMailer"
+  ],
+  "website": "https://ekhayasmartscholars.onrender.com/",
+  "github": "https://github.com/Zibeke0nwabe/ESS_project",
+  "experience": "After facing setbacks with Agent Trainer, this project gave me a fresh sense of purpose. I collaborated with a fellow agent who shares a passion for improving lives through education. Together, we built Ekhaya Smart Scholars—a platform aimed at providing accessible, secure, and functional online applications. It allowed me to apply my previous experience to real-world features like authentication, admin dashboards, and email notifications, while also regaining confidence in my path as a developer.",
+  "challenges": "Ekhaya was developed during the same late-night hours as Agent Trainer, while working full-time in a call center. Balancing project demands with client feedback—especially the request to keep the layout similar to Esgela—presented both creative and technical constraints. The biggest challenge was implementing dual email flows (for users and admins), maintaining database security with JWT, and building a subscriber system that required conditional email confirmation and storage.",
+  "motivationForReact": "This project was not just about writing code—it was about moving forward after feeling stuck. While Agent Trainer didn’t get the feedback I hoped for, I realized that I didn’t need validation to keep building. With Ekhaya, I focused on helping others and staying true to my goal of creating useful, meaningful software. The project reminded me that I am a developer, with or without recognition. It also reinforced the importance of empathy-driven development—understanding user needs and building tools that reflect their reality."
+} ,
+{
+  "id": "3",
+  "title": "Esgela Online Applications — Part 1 Application System",
+  "description": "A full-stack application for streamlining student applications with secure login, dynamic student ID generation, and automated email notifications.",
+  "detailedDescription": "Esgela is a full-stack web platform built to manage student applications in a streamlined and secure way. Applicants receive a unique 8-digit student number starting with '24', which they can use along with their ID and password to log in. This platform focuses on simplifying the submission and review process while allowing users to track their application status. The goal of this first phase was to establish a reliable backend system that will integrate directly with the learning platform planned for Part 2.",
+  "image": "images/esgelaHome.png",
+  "images": [
+    "images/esgelaHTML.png",
+    "images/esgelaLogin.png",
+    "images/esgelaAbout.png",
+    "images/esgelaHome.png"
+  ],
+  "video": "videos/esgelaPortal.mp4",
+  "tools": [
+    "HTML", "CSS", "JavaScript", "Embedded JS",
+    "Node.js", "Express", "MongoDB",
+    "TailwindCSS", "JWT", "NodeMailer"
+  ],
+  "website": "https://esgela.onrender.com/",
+  "github": "https://github.com/Zibeke0nwabe/esgela",
+  "experience": "Esgela was my first major project focused on education. It helped me understand the fundamentals of building secure, user-friendly application systems. The project taught me how to design custom authentication logic, including handling dynamic student ID generation and conditional login methods. It also served as a strong foundation for future expansion into a full learning management platform.",
+  "challenges": "Designing a dual-login system that accepted both national ID and dynamically generated student numbers required creative logic and rigorous backend checks. Managing password states—both temporary and final—and integrating email notifications added complexity. Additionally, balancing these tasks with long working hours made development even more demanding.",
+  "motivationForReact": "Esgela was born from a desire to make quality education accessible, especially to those who can't afford traditional systems. After completing Part 1, the goal was to extend the platform into a full learning system using the MERN stack—my core expertise. We started building the learning platform (Part 2) using AceEditor to let students write and preview code directly in the browser. Students accepted into the application system receive a new password via email for the learning platform, separate from their application credentials. While development is currently paused due to work constraints and focus on other projects like Agent Trainer and Ekhaya, I remain committed to Esgela’s mission. I still plan to build a hybrid bootcamp—online and on-site, and fully free for learners."
+}
+  ,  
+{
+  "id": "4",
+  "title": "Esgela Online Applications — Part 2 Application System",
+  "description": "A full-stack application system that enables students to apply online, receive a unique student number, and track application status through a secure login.",
+  "detailedDescription": "Esgela is a secure and dynamic online application system built to help students easily apply to academic programs. Upon applying, users receive a unique 8-digit student number starting with '24', which they can use along with their ID or email and a temporary password to log in and check the status of their application. The platform simplifies the application review process for admins while keeping users informed with automated email updates.",
+  "image": "images/esgelaHeror.png",
+  "images": [
+    "images/esgelaHTML.png",
+    "images/esgelaLogin.png",
+    "images/esgelaAbout.png",
+    "images/esgelaHome.png"
+  ],
+  "video": "videos/esgelaPortal.mp4",
+  "tools": [
+    "HTML", "CSS", "JavaScript", "Embedded JS",
+    "Node.js", "Express", "MongoDB",
+    "TailwindCSS", "JWT", "NodeMailer"
+  ],
+  "website": "https://www.tiktok.com/@onwabezibeke/video/7504344608940346679?is_from_webapp=1&sender_device=pc&web_id=7502623371319494199",
+  "github": "https://github.com/Zibeke0nwabe/Full-stack-websites",
+  "experience": "Esgela was the first platform I developed specifically for online applications. It was a major learning curve that helped me understand how to manage authentication, unique ID generation, and real-time email communication. This project helped lay the technical foundation for future platforms like Ekhaya and the upcoming Esgela learning system.",
+  "challenges": "Creating a flexible authentication system that supports both ID and dynamically generated student numbers required careful logic. Managing two passwords—one for application tracking and another for future learning access—was also challenging. Debugging email delivery, ensuring backend validation, and balancing security with usability were all part of the process.",
+  "motivationForReact": "Esgela Part 1 was built with the vision of opening the door to free education for all. It was the first step in building an end-to-end bootcamp platform that would be accessible to underserved learners. The system empowers students to track their application status independently and prepares the ground for a future learning management system. Even though further development is paused for now, I plan to return to this project and expand it into a full online and on-campus bootcamp platform."
+},
+ {
+  "id": "5",
+  "title": "Football Fixture Generator App",
+  "description": "A grassroots-inspired web app to create and manage local sports fixtures, reflecting the early stages of my development journey.",
+  "detailedDescription": "The Football Fixture Generator is a web application built to manage local tournaments and generate match pairings. Designed during my early days of learning web development, this project was inspired by the frustration of seeing unfair pairings in street tournaments in Port St. Johns. Although the UI and logic were basic at the time, it marked a major milestone in turning real-life challenges into digital solutions. It uses LocalStorage for data persistence and allows users to input team names and auto-generate pairings.",
+  "image": "images/ball.png",
+  "images": [
+    "images/ball.png",
+    "images/ball2.png"
+  ],
+  "video": "",
+  "tools": [
+    "HTML", "CSS", "JavaScript", "LocalStorage"
+  ],
+  "website": "https://fixtureapp-e3601.web.app/",
+  "github": "https://github.com/Zibeke0nwabe/HTML-CSS-JavaScript/tree/master/Football%20Fixture%20Maker",
+  "experience": "This was one of my earliest web development projects and a key turning point in my learning. Even with limited skills and tools, I took an idea from my everyday life and transformed it into a functional product. It helped me understand how user input, logic, and persistence could come together to build a usable tool—laying the groundwork for everything that followed.",
+  "challenges": "The most difficult part was implementing the team pairing logic and aligning it with scheduled match times. As a beginner, creating a consistent UI and managing LocalStorage logic was complex, but rewarding. The limitations were many, but so were the lessons.",
+  "motivation": "Growing up watching informal tournaments where matchups were often unfair, I always imagined a tool that could randomly and fairly generate fixtures. This app was my first attempt to solve that real-world problem. It reflects where I started and shows the power of turning an idea into something real, even without advanced tools. I still plan to return to this project in the future to improve the UI and add smarter pairing features. It reminds me of how far I've come and how much further I can go."
+},
 ];
 
 const App = () => {
   return (
     <Router>
       <div className="font-sans">
+      <ScrollToTop />
         <Navbar />
         <Routes>
           <Route 

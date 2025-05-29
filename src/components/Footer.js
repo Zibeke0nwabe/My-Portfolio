@@ -4,74 +4,44 @@ import {
   FaPhone,
   FaLinkedin,
   FaGithub,
-  FaProjectDiagram,
-  FaTools,
-  FaArrowRight,
-  FaMapMarkerAlt
+  FaMapMarkerAlt,
+  FaCalendarCheck,
+  FaFacebookF,
+  FaYoutube
 } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white px-6 py-12">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
+    <footer className="bg-[#000026] text-white pb-8 pt-8 border-t border-gray-800">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
-        {/* About / Branding */}
+        {/* About / Mission */}
         <div>
-          <h2 className="text-3xl font-bold mb-4 text-orange-500">Zibeke Onwabe</h2>
-          <p className="text-sm text-gray-400 mb-6">
-            Passionate full-stack developer dedicated to creating impactful, user-centric applications.
-            Let's collaborate and build something extraordinary together.
+          <h2 className="text-2xl font-bold mb-4 text-orange-500">Zibeke Onwabe</h2>
+          <p className="text-sm text-gray-400 leading-relaxed">
+            Passionate full-stack developer focused on accessible, impactful software. I believe in empowering others
+            through technology, especially within local communities.
           </p>
-          <button
-            className="inline-flex items-center px-6 py-3 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition"
-            onClick={() => window.location = 'mailto:Zibekeonwabe@gmail.com'}
-          >
-            <FaArrowRight className="mr-2" /> Connect with Me
-          </button>
-        </div>
-
-        {/* Projects & Tools */}
-        <div>
-          <h3 className="text-xl font-semibold mb-4 flex items-center">
-            <FaProjectDiagram className="mr-2 text-orange-500" /> Featured Projects
-          </h3>
-          <ul className="space-y-3 text-sm text-gray-300">
-            <li>
-              <a href="https://esgela.onrender.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
-                Esgela Online Application
-              </a>
-              <p className="text-xs text-gray-500">Streamlined application process for coding bootcamp admissions.</p>
-            </li>
-            <li>
-              <a href="#" className="hover:text-orange-500">Port St. Johns Tour Guider</a>
-              <p className="text-xs text-gray-500">Comprehensive travel guide for Eastern Cape visitors.</p>
-            </li>
-            <li>
-              <a href="#" className="hover:text-orange-500">Sports Tournament Manager</a>
-              <p className="text-xs text-gray-500">Efficient management of sports teams and schedules.</p>
-            </li>
-          </ul>
-
-          <h4 className="text-lg font-semibold mt-6 mb-2 flex items-center">
-            <FaTools className="mr-2 text-orange-500" /> Technologies & Tools
-          </h4>
-          <div className="flex flex-wrap gap-2 text-sm text-gray-400">
-            <span className="bg-gray-800 px-3 py-1 rounded">React</span>
-            <span className="bg-gray-800 px-3 py-1 rounded">Node.js</span>
-            <span className="bg-gray-800 px-3 py-1 rounded">MongoDB</span>
-            <span className="bg-gray-800 px-3 py-1 rounded">Express</span>
-            <span className="bg-gray-800 px-3 py-1 rounded">TailwindCSS</span>
-            <span className="bg-gray-800 px-3 py-1 rounded">Git</span>
-            <span className="bg-gray-800 px-3 py-1 rounded">JavaScript</span>
+          <div className="flex space-x-4 mt-4">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <FaFacebookF className="text-blue-600 hover:text-white text-sm" />
+            </a>
+            <a href="https://linkedin.com/in/Zibeke0nwabe" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin className="text-blue-400 hover:text-white text-sm" />
+            </a>
+            <a href="https://github.com/Zibeke0nwabe" target="_blank" rel="noopener noreferrer">
+              <FaGithub className="hover:text-white text-sm" />
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+              <FaYoutube className="text-red-600 hover:text-white text-sm" />
+            </a>
           </div>
         </div>
 
-        {/* Contact Information */}
+        {/* Contact Info */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 flex items-center">
-            <FaEnvelope className="mr-2 text-orange-500" /> Contact Information
-          </h3>
-          <ul className="space-y-4 text-sm text-gray-300">
+          <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
+          <ul className="space-y-3 text-sm text-gray-300">
             <li className="flex items-center">
               <FaPhone className="mr-2 text-orange-500" />
               <span>+27 78-430-0901</span>
@@ -81,27 +51,37 @@ const Footer = () => {
               <span>Zibekeonwabe@gmail.com</span>
             </li>
             <li className="flex items-center">
-              <FaLinkedin className="mr-2 text-orange-500" />
-              <a href="https://linkedin.com/in/Zibeke0nwabe" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
-                LinkedIn Profile
-              </a>
-            </li>
-            <li className="flex items-center">
-              <FaGithub className="mr-2 text-orange-500" />
-              <a href="https://github.com/Zibeke0nwabe" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
-                GitHub Portfolio
-              </a>
-            </li>
-            <li className="flex items-center">
               <FaMapMarkerAlt className="mr-2 text-orange-500" />
               <span>Durban, KwaZulu Natal, South Africa</span>
             </li>
           </ul>
         </div>
 
+        {/* Technologies & Availability */}
+        <div>
+          <h4 className="text-lg font-semibold  mb-2 flex items-center">
+            <FaCalendarCheck className="mr-2 text-orange-500" /> Availability
+          </h4>
+          <p className="text-sm text-gray-400">
+            Open to freelance projects, mentorship, and remote collaborations worldwide.
+          </p>
+        </div>
+
+        {/* Newsletter & Credit */}
+        <div>
+          <h3 className="text-xl font-semibold mb-4">Developers</h3>
+         <div className="mt-6 text-sm text-gray-400">
+            <img src="/images/esgela.jpg" alt="Esgela Logo" class="w-16 h-auto p-2"></img>
+            <p className="mb-1">
+              Designed with love by <a href="https://esgela.onrender.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Esgela Team</a>
+            </p>
+            <p>Empowering the youth through code & creativity.</p>
+          </div>
+        </div>
       </div>
     </footer>
   );
 };
 
 export default Footer;
+
