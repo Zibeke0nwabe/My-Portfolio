@@ -13,8 +13,8 @@ const FeaturedProjects = ({ projects }) => {
   };
 
   return (
-    <section id="projects" className="py-20">
-      <h2 className="text-3xl font-bold text-center mb-8">My Projects</h2>
+    <section id="projects" className="pb-20">
+      <h2 className="text-3xl font-bold text-center mb-8">My experience As A Developer</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4">
         {displayedProjects.map((project) => (
           <ProjectCard key={project.id} project={project} />

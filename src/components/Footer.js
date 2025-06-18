@@ -71,7 +71,6 @@ const Footer = () => {
         <div>
           <h3 className="text-xl font-semibold mb-4">Developers</h3>
          <div className="mt-6 text-sm text-gray-400">
-            <img src="/images/esgela.jpg" alt="Esgela Logo" class="w-16 h-auto p-2"></img>
             <p className="mb-1">
               Designed with love by <a href="https://esgela.onrender.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Esgela Team</a>
             </p>

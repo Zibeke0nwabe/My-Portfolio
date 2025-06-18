@@ -145,9 +145,9 @@ const App = () => {
               <>
                 <Hero />
                 <About />
+                <Services />
                 <Myinfo/>
                 <FeaturedProjects projects={projects} />
-                <Services />
                 <Footer />
               </>
             } 

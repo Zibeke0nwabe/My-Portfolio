@@ -17,7 +17,7 @@ const ProjectCard = ({ project }) => {
         className="w-full h-40 object-cover rounded mb-4" 
       />
       <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-      <p className="text-gray-700 mb-4">{project.description}</p>
+      <p className="text-gray-700 mb-4 text-sm">{project.description}</p>
       <div className="flex flex-wrap gap-2 mb-4">
         {project.tools.map((tool, index) => (
           <span 
@@ -52,7 +52,7 @@ const ProjectCard = ({ project }) => {
         onClick={handleProjectInfo} 
         className="mt-4 bg-orange-500 text-white px-4 py-2 font-semibold rounded text-sm sm:text-base"
       >
-        View More
+        View Project
       </button>
     </div>
   );
