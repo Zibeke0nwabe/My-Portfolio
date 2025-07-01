@@ -6,7 +6,7 @@ const Navbar = () => {
   const handleMenuToggle = () => setIsMenuOpen(prev => !prev);
 
   return (
-    <nav className="relative flex justify-between items-center md:px-12 md:py-4 bg-white">
+    <nav className="relative p-6 flex justify-between items-center md:px-12 md:py-4 bg-white">
       {/* Logo Section */}
       <a href="/" className="flex items-center space-x-2">
         <div className="w-3 h-3 bg-orange-500 rotate-45"></div>
