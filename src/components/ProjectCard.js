@@ -10,50 +10,66 @@ const ProjectCard = ({ project }) => {
   };
 
   return (
-    <div className="project-card bg-white p-4 rounded shadow-md">
+    <div className="project-card bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-1 overflow-hidden flex flex-col">
       <img 
         src={project.image} 
         alt={project.title} 
-        className="w-full h-40 object-cover rounded mb-4" 
+        className="w-full h-48 sm:h-56 object-cover"
       />
-      <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-      <p className="text-gray-700 mb-4 text-sm">{project.description}</p>
-      <div className="flex flex-wrap gap-2 mb-4">
-        {project.tools.map((tool, index) => (
-          <span 
-            key={index} 
-            className="bg-gray-200 text-gray-800 px-2 py-1 font-semibold rounded text-sm"
+      <div className="p-4 flex flex-col flex-1">
+        <h3 className="text-xl font-semibold text-gray-800 mb-2 truncate">{project.title}</h3>
+        
+        {/* Description with a fixed min-height and line-clamp for visual balance */}
+        <p className="text-gray-600 text-sm mb-4 min-h-[72px] line-clamp-3">
+          {project.description}
+        </p>
+
+        <div className="flex flex-wrap gap-2 mb-4">
+          {project.tools.map((tool, index) => (
+            <span 
+              key={index} 
+              className="bg-orange-100 text-orange-700 px-2 py-1 rounded-full text-xs font-medium"
+            >
+              {tool}
+            </span>
+          ))}
+        </div>
+
+        <div className="flex flex-wrap gap-3 mb-4">
+          {project.website && (
+            <a 
+              href={project.website} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center bg-gray-900 text-white px-3 py-2 rounded hover:bg-gray-800 text-xs sm:text-sm transition-colors"
+            >
+              <FaExternalLinkAlt className="mr-2" />
+              Website
+            </a>
+          )}
+          {project.github && (
+            <a 
+              href={project.github} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center bg-gray-900 text-white px-3 py-2 rounded hover:bg-gray-800 text-xs sm:text-sm transition-colors"
+            >
+              <FaGithub className="mr-2" />
+              Source
+            </a>
+          )}
+        </div>
+
+        {/* Pushes the button to the bottom */}
+        <div className="mt-auto">
+          <button 
+            onClick={handleProjectInfo} 
+            className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded text-sm sm:text-base font-semibold transition-colors"
           >
-            {tool}
-          </span>
-        ))}
+            View Project
+          </button>
+        </div>
       </div>
-      <div className="flex flex-wrap gap-2 mb-4">
-        <a 
-          href={project.website} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="flex items-center bg-gray-900 text-white px-4 py-2 rounded text-xs sm:text-sm"
-        >
-          <FaExternalLinkAlt className="mr-2" />
-          Website
-        </a>
-        <a 
-          href={project.github} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="flex items-center bg-gray-900 text-white px-4 py-2 rounded text-xs sm:text-sm"
-        >
-          <FaGithub className="mr-2" />
-          Source
-        </a>
-      </div>
-      <button 
-        onClick={handleProjectInfo} 
-        className="mt-4 bg-orange-500 text-white px-4 py-2 font-semibold rounded text-sm sm:text-base"
-      >
-        View Project
-      </button>
     </div>
   );
 };
