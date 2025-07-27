@@ -20,7 +20,7 @@ const Hero = () => {
         </p>
         <div className="mt-8 space-x-4">
           <a
-            href="/images/agentTrainer.pptx"
+            href="/images/agentTrainer.odp"
             download
             className="bg-orange-500 text-white px-6 py-3 font-semibold rounded-full shadow-md hover:bg-orange-400"
           >
